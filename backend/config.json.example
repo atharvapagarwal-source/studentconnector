@@ -1,0 +1,29 @@
+{
+  "listeners": [
+    {
+      "address": "0.0.0.0",
+      "port": 8080,
+      "https": false
+    }
+  ],
+  "db_clients": [
+    {
+      "name": "default",
+      "rdbms": "postgresql",
+      "host": "127.0.0.1",
+      "port": 5432,
+      "dbname": "edupulse_db",
+      "user": "postgres",
+      "passwd": "YOUR_POSTGRES_PASSWORD",
+      "is_fast": true,
+      "connection_number": 8
+    }
+  ],
+  "app": {
+    "jwt_secret": "EDUPULSE_SUPER_SECRET_KEY_CHANGE_IN_PROD_2026",
+    "ai_api_key": "YOUR_OPENAI_OR_LLM_API_KEY",
+    "ai_endpoint": "https://api.openai.com/v1/chat/completions",
+    "upload_dir": "./uploads",
+    "cors_allowed_origin": "*"
+  }
+}

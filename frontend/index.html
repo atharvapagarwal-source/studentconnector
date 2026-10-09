@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduPulse — AI-Powered Academic Intelligence Platform. Understand. Improve. Achieve." />
+  <title>EduPulse — AI-Powered Academic Intelligence Platform</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dashboards.css" />
+</head>
+<body>
+
+  <!-- Shared Global Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#landing" class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <span>EduPulse</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link" data-route="landing" onclick="EduPulseRouter.navigate('landing')">Home</a></li>
+        <li><a class="nav-link" onclick="document.getElementById('features')?.scrollIntoView({behavior:'smooth'})">Features</a></li>
+        <li><a class="nav-link" onclick="document.getElementById('solution')?.scrollIntoView({behavior:'smooth'})">How It Works</a></li>
+        <li><a class="nav-link" onclick="EduPulseRouter.navigate('auth?mode=login')">For Students</a></li>
+        <li><a class="nav-link" onclick="EduPulseRouter.navigate('auth?mode=login')">For Teachers</a></li>
+      </ul>
+
+      <div class="nav-actions" id="navAuthAction">
+        <!-- Injected dynamically by router -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dynamic Application Root View Container -->
+  <div id="app-root">
+    <!-- View HTML content will render here -->
+  </div>
+
+  <!-- Shared Footer -->
+  <footer style="background: var(--primary-deep); color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.08); padding: 4rem 0 2rem 0; margin-top: auto;">
+    <div class="container">
+      <div class="grid grid-cols-4 gap-8" style="margin-bottom: 3rem;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem; color: white;">
+            <div class="brand-icon">⚡</div>
+            <span>EduPulse</span>
+          </div>
+          <p style="font-size: 0.875rem; color: #cbd5e1; line-height: 1.6;">
+            EduPulse connects students and teachers through AI-powered learning insights, anonymous feedback, intelligent assignment management, personalized study plans, and opportunity discovery.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="color: white; font-weight: 700; margin-bottom: 1rem; font-size: 0.95rem;">Platform Modules</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+            <li><a href="javascript:void(0)" onclick="EduPulseRouter.navigate('student')" style="color: #cbd5e1;">AI Learning Insights</a></li>
+            <li><a href="javascript:void(0)" onclick="EduPulseRouter.navigate('student')" style="color: #cbd5e1;">Anonymous Feedback</a></li>
+            <li><a href="javascript:void(0)" onclick="EduPulseRouter.navigate('student')" style="color: #cbd5e1;">Personalized Study Planner</a></li>
+            <li><a href="javascript:void(0)" onclick="EduPulseRouter.navigate('student')" style="color: #cbd5e1;">Opportunity Discovery Engine</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: white; font-weight: 700; margin-bottom: 1rem; font-size: 0.95rem;">User Portals</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+            <li><a href="javascript:void(0)" onclick="AuthView.quickLogin('student')" style="color: #cbd5e1;">Student Intelligence Portal</a></li>
+            <li><a href="javascript:void(0)" onclick="AuthView.quickLogin('teacher')" style="color: #cbd5e1;">Teacher Analytics Console</a></li>
+            <li><a href="javascript:void(0)" onclick="AuthView.quickLogin('admin')" style="color: #cbd5e1;">Administrator Control Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: white; font-weight: 700; margin-bottom: 1rem; font-size: 0.95rem;">Technology Stack</h4>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.5rem;">⚡ <strong>Backend:</strong> C++ Drogon Web Framework</p>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.5rem;">🐘 <strong>Database:</strong> PostgreSQL Relational Storage</p>
+          <p style="font-size: 0.85rem; color: #cbd5e1;">🎨 <strong>Frontend:</strong> Vanilla HTML5, CSS3, JS & Chart.js</p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.08); pt-4; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #64748b;">
+        <div>© 2026 EduPulse Academic Intelligence Platform. All rights reserved.</div>
+        <div>Built with HTML5, CSS3, JavaScript, C++, Drogon & PostgreSQL.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Application JavaScript Modules -->
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+
+  <!-- Views -->
+  <script src="js/views/landing.js"></script>
+  <script src="js/views/auth.js"></script>
+  <script src="js/views/studentDashboard.js"></script>
+  <script src="js/views/teacherDashboard.js"></script>
+  <script src="js/views/adminDashboard.js"></script>
+
+  <!-- Router & Main -->
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
